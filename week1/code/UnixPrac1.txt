@@ -1,23 +1,34 @@
 
 #1
+#read the files using cat command and then count the lines using wc
 cat ../data/fasta/407228326.fasta | wc -l
-wc -l ../data/fasta/407228326.fasta
 cat ../data/fasta/407228412.fasta | wc -l
 cat ../data/fasta/E.coli.fasta | wc -l
+#wc -l ../data/fasta/407228326.fasta
+#antother way to count the lines
 
 #2
+#print things from scond line
 tail -n +2 ../data/fasta/E.coli.fasta
 
 #3
+#count the letters using wc -c
 tail -n +2 ../data/fasta/E.coli.fasta | wc -c
 
 #4
-grep -o "ATGC" ../data/fasta/E.coli.fasta | wc -c | tr -d "\n"
+#pick out "ATGC" using grep, removing newline characters using tr -d
+grep -o "ATGC" ../data/fasta/E.coli.fasta | tr -d "\n" | wc -c
 
 #5
-grep A E.coli.fasta | wc -c
-cat E.coli.fasta | tr -d "A" | tr -d "T" | wc -c
-grep -o 'A' ../data/fasta/E.coli.fasta | wc -c | tr -d "\n"
-grep -o 'T' ../data/fasta/E.coli.fasta | wc -c | tr -d "\n"
-grep -o 'G' ../data/fasta/E.coli.fasta | wc -c | tr -d "\n"
-grep -o 'C' ../data/fasta/E.coli.fasta | wc -c | tr -d "\n"
+#count A,T,C,G
+A_count=$(tail -n+2 ../data/fasta/E.coli.fasta | tr -d "\n" | grep -o 'A'| wc -c )
+T_count=$(tail -n+2 ../data/fasta/E.coli.fasta | tr -d "\n" | grep -o 'T'| wc -c)
+C_count=$(tail -n+2 ../data/fasta/E.coli.fasta | tr -d "\n" | grep -o 'C'| wc -c )
+G_count=$(tail -n+2 ../data/fasta/E.coli.fasta | tr -d "\n" | grep -o 'G'| wc -c )
+#caculate ratio using bc command
+Ratio=$(bc -l <<< "scale=2; ($A_count + $T_count) / ($G_count + $C_count) ")
+
+echo "$Ratio"
+
+#grep A ../data/fasta/E.coli.fasta
+#another way to pick out A, T, C, G
