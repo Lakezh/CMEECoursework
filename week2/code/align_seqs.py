@@ -68,7 +68,7 @@ print(my_best_align)
 print(s1)
 print("Best score:", my_best_score)
 
-with open('../data/Output_file', 'w') as output:
+with open('../data/Output_file.csv', 'w') as output:
     output.write("Best Alignment:\n" + my_best_align + "\n")
     output.write("Best Score: " + str(my_best_score))
 #write output data file
