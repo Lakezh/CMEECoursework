@@ -9,7 +9,6 @@ taxa = [ ('Myotis lucifugus','Chiroptera'),
          ('Arctocephalus gazella', 'Carnivora'),
          ('Canis lupus', 'Carnivora'),
         ]
-
 # Write a python script to populate a dictionary called taxa_dic derived from
 # taxa so that it maps order names to sets of taxa and prints it to screen.
 # 
@@ -21,8 +20,20 @@ taxa = [ ('Myotis lucifugus','Chiroptera'),
 
 #### Your solution here #### 
 
-taxa_dic = 
+taxa_dict = {}
+# Initialize an empty dictionary 
+for bird in taxa:
+    if bird[1] not in taxa_dict:
+    # Populate the dictionary by iterating through the 'taxa' list.
+        taxa_dict[bird[1]] = set()
+        # Create an empty set for the order names
+    taxa_dict[bird[1]].add(bird[0])
+    #Add the species to the set
+print(taxa_dict)
 
-# Now write a list comprehension that does the same (including the printing after the dictionary has been created)  
- 
-#### Your solution here #### 
+Taxa_dict = {Order_names: set(bird[0] for bird in taxa if bird[1] == Order_names) for species, Order_names in taxa }
+#creating a dictionary using comprehension
+print(Taxa_dict)
+
+
+
