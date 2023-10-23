@@ -3,8 +3,10 @@
 import sys
 import csv
 
-Input_filename = '../data/sequences.csv'
-
+sys.path.append('../data')
+#add the path to use the data from data directory
+Input_filename = sys.argv[1]
+Output_filename = sys.argv[2]
 #rename the arguments
 
 
@@ -39,11 +41,6 @@ def calculate_score(s1, s2, l1, l2, startpoint):
             else:
                 matched = matched + "-"
     return score
-    print("." * startpoint + matched)           
-    print("." * startpoint + s2)
-    print(s1)
-    print(score) 
-    print(" ")
 
     
 
@@ -68,7 +65,7 @@ print(my_best_align)
 print(s1)
 print("Best score:", my_best_score)
 
-with open('../data/Output_file.csv', 'w') as output:
+with open(Output_filename, 'w') as output:
     output.write("Best Alignment:\n" + my_best_align + "\n")
     output.write("Best Score: " + str(my_best_score))
 #write output data file
