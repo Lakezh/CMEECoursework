@@ -18,8 +18,11 @@ def is_an_oak(name):
     return name.lower().startswith('quercus')
 
 def main(argv):
+    #create the main function
     f = open('../data/TestOaksData.csv','r')
+    #open the data file
     g = open('../data/JustOaksData.csv','w')
+    #write the data file
     taxa = csv.reader(f)
     csvwrite = csv.writer(g)
     oaks = set()
