@@ -3,10 +3,8 @@
 import sys
 import csv
 
-sys.path.append('../data')
-#add the path to use the data from data directory
-Input_filename = sys.argv[1]
-Output_filename = sys.argv[2]
+Input_filename = '../data/sequences.csv'
+Output_filename = '../results/Output_file.csv'
 #rename the arguments
 
 
