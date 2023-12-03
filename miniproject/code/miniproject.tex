@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{amsmath}
 \usepackage[natbibapa]{apacite}
@@ -16,6 +16,7 @@
         \vspace{1.5cm}
         
         \textbf{ZhongbinHu}\\
+        Affiliation: Imperial College London\\
         Email: zh1323@ic.ac.uk
         
         \vfill
@@ -35,7 +36,7 @@
 \section{Abstract}
 This study aims to compare the effectiveness of logistic and Gompertz models against quadratic and cubic models in capturing the growth patterns of diverse bacterial species.  Utilizing data from global lab experiments, we employed statistical measures like Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), and R-squared to assess model fit.
 
-Our methodology involved fitting each model to bacterial growth data, with a focus on initial parameter estimation for enhancing model accuracy.  The results revealed that non-linear models, particularly the Gompertz model, provided a superior fit across most species, as indicated by lower AIC and BIC values compared to linear models.  This superiority was attributed to the Gompertz model's ability to encapsulate the lag phase of growth, a critical phase often inadequately represented in linear models.
+My methodology involved fitting each model to bacterial growth data, with a focus on initial parameter estimation for enhancing model accuracy.  The results revealed that non-linear models, particularly the Gompertz model, provided a superior fit across most species, as indicated by lower AIC and BIC values compared to linear models.  This superiority was attributed to the Gompertz model's ability to encapsulate the lag phase of growth, a critical phase often inadequately represented in linear models.
 \section{Introduction}
 Bacteria are one of the most abundant and diverse groups of microbes on Earth, and the growth and abundance of them plays a vital role in the ecosystem. Bacteria can contribute to the global carbon cycle through reactions such as photosynthesis. At the same time, bacteria can promote the transfer of nutrients by breaking down organic matter, thus supporting the productivity of the entire ecosystem\cite{keller2006}. The population growth rate of bacteria also plays an important role in medicine and public health, and the rapid reproduction of bacteria can lead to the rapid spread of diseases. The growth of bacterial resistance is also closely related to the dynamics of bacterial populations\cite{rivera-tapia2003}. Understanding and predicting the growth patterns of bacterial populations is critical to developing effective disease control strategies.
 
@@ -66,8 +67,8 @@ The data used in this project were collected from lab experiments all over the w
 
 \subsection{Models}
 
-Quadratic and cubic polynomial model were used. The two models are similar. Cubic models are more complex and flexible than quadratic models, but this can also lead to problems with overfitting. Compared to simple linear models, Quadratic and cubic models provide greater flexibility and can accommodate more complex data structures\cite{penny2011}. 
-they are effective tools for exploring patterns in the data. Especially in cases where the data is insufficient to support more complex models, quadratic and cubic models can serve as phenomenological methods that provide a basic understanding of data trends. It is applicable when the data show an approximate linear relationship\cite{penny2011}. When microbial population growth is close to linear in the observed time window, a linear model is appropriate and easy to explain. This is often seen in a particular phase of population growth, such as the exponential growth phase. Because of its simplicity, the linear model can be easily applied to different types of microbes.
+I used quadratic and cubic polynomial model . The two models are similar. Cubic models are more complex and flexible than quadratic models, but this can also lead to problems with overfitting. Compared to simple linear models, Quadratic and cubic models provide greater flexibility and can accommodate more complex data structures\cite{penny2011}. 
+They are effective tools for exploring patterns in the data. Especially in cases where the data is insufficient to support more complex models, quadratic and cubic models can serve as phenomenological methods that provide a basic understanding of data trends. It is applicable when the data show an approximate linear relationship\cite{penny2011}. When microbial population growth is close to linear in the observed time window, a linear model is appropriate and easy to explain. This is often seen in a particular phase of population growth, such as the exponential growth phase. Because of its simplicity, the linear model can be easily applied to different types of microbes.
 
 A classical (somewhat) mechanistic model is the logistic equation\cite{zwietering1990} .The sigmoidal curve produced by the logistic model is well suited to describe population growth under resource constraints. It starts with slow growth, accelerates as resources are used, and eventually slows as resources are depleted. The effects of resource constraints on population growth are considered. At the same time, the parameters in the model are also of ecological significance, which makes the model have a good explanation in biology.:
 \begin{equation}
@@ -189,7 +190,7 @@ From the BIC table 3, the result is quite similar to  table 2. Gompertz model is
 
 From table 2 and 3, the non-linear model fits better than linear model.Biological processes, especially those like bacterial growth, often exhibit nonlinear characteristics. For example, bacterial growth tends to be slow at first, then rapidly increases, and finally slows down as resources are depleted, eventually reaching a stable state. Nonlinear models often provide parameters that are more directly related to biological processes\cite{zwietering1990} (such as growth rate, carrying capacity, etc.) that have clear biological significance.The parameters of a linear model may be difficult to relate directly to specific biological features.
 This sigmoid curve (population grwoth curve) is a typical nonlinear behavior, which is the majority of curves in the data (Figure 1).  Sincce the data points represent the growth process from the "time-lag phase " to the "stationary pahse". Gompertz's model fits the curves the best. 
-Some of the subset data didn't contain "time-lag" phases(shown in figure.2) in this case, the logistic model fits the data the best.
+Some of the data subset didn't contain "time-lag" phases(shown in figure.2) In this case, the logistic model fits the data the best.
 \begin{figure}
         \centering
         \includegraphics[width=0.5\linewidth]{../results/subset_ 7 _plot.png}
@@ -197,7 +198,7 @@ Some of the subset data didn't contain "time-lag" phases(shown in figure.2) in t
         \label{fig:subset1-plot7}
     \end{figure}
 
-Linear models, due to their simplicity, may have a strong ability to describe data with simple trends. Some of the subset data may only includes "exponential phases"(shown in figure 3). Quadratic model becomes the best model fitting the data. In figure 4, the population size drops instead of keeping steady. this might because, the bacteria enter "mortality phase". Both logistic and Gompertz model could not fit the data well. Cubic model becomes the best model in this subset.
+Linear models, due to their simplicity, may have a strong ability to describe data with simple trends. Some of the data subset may only includes "exponential phases"(shown in figure 3). Quadratic model becomes the best model fitting the data. In figure 4, the population size drops instead of keeping steady. this might because, the bacteria enter "mortality phase". Both logistic and Gompertz model could not fit the data well. Cubic model becomes the best model in this data subset.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{../results/subset_ 116 _plot.png}
@@ -214,7 +215,7 @@ Linear models, due to their simplicity, may have a strong ability to describe da
 
 From the result, Gompertz might be the best model fitting bacterial population growth.In the real world, it takes time for microbes to grow. Therefore, a time lag before exponential growth is needed. Gompertz model contains t-lag as the parameter, which means it might be more accurate and complete than logistic model. 
 
-However, Gompertz model could not fit all the subsets. In some cases, the linear model becomes the best model. this might because, the time of a complete stages of population growth is unknown, the data might only demonstrate part of phases. For example, the linear model could fit the exponential stage quite well. Therefore, in some of the subsets, linear model might be the best fitted model. 
+However, Gompertz model could not fit all the subsets. In some cases, the linear model becomes the best model. this might because, the time of a complete stages of population growth is unknown, the data might only demonstrate part of phases. For example, the linear model could fit the exponential stage quite well. Therefore, in some of the data subsets, linear model might be the best fitted model. 
 
 \subsection{number of parameters}
 The number of parameters in models may also influence the result. The increased number of parameters may lead to increasing of model complexity, which might contribute the models to capture more complex mechanisms. However, Occam’s rzzor principle suggests that the simple one is preferred when comparing two models\cite{domingos1999}. More parameters in models might cause over-fitting, which means the model may not fit new data\cite{domingos1999}. In addition, more parameters may require more explanations, bring about difficulties in explaining the model. The balance between the number of parameters is quite important in models. 
@@ -224,7 +225,7 @@ Starting values may affect the model quality. From the R results, there are abou
 
 There is not clearly definition of the duration of lag-time since the transition from the slow growth to exponential growth rate is continuous instead of sudden \cite{peleg2011}. There are two ways to find the lag-time, one is to find the across point s visually, and the other is to include t-lag in a non-linear model\cite{mckellar2003}. However, there might be potential problems., since it is hard to be sure about t-lag value. This means their might be errors in model fitting by using t-lag. In theory, even for growth curves with a lengthy "lag time," A can only be approximately equal to log N0 due to the fact that the second term on the right side of the equation never reaches an exact value of zero. Converting a model to a rate model for predicting dynamic growth might pose a significant challenge when describing the boundary condition. .
 
- As for the Asymptotic Growth Level, if the clear stationary phase does not occur, then the asymptotic value will just be an extrapolated value\cite{peleg2011}. Therefore, the value might nor represent the reality condition. 
+ As for the Asymptotic Growth Level, if the clear stationary phase does not occur, then the asymptotic value will just be an extrapolated value\cite{peleg2011}. Therefore, the value might not represent the reality condition. 
 
 
 \subsection{Model selection}
