@@ -2,7 +2,7 @@
 \usepackage{graphicx} % Required for inserting images
 \usepackage{amsmath}
 \usepackage[natbibapa]{apacite}
-
+\usepackage{natbib}
 \usepackage{setspace}
 
 \begin{document}
@@ -39,7 +39,8 @@ Our methodology involved fitting each model to bacterial growth data, with a foc
 \section{Introduction}
 Bacteria are one of the most abundant and diverse groups of microbes on Earth, and the growth and abundance of them plays a vital role in the ecosystem. Bacteria can contribute to the global carbon cycle through reactions such as photosynthesis. At the same time, bacteria can promote the transfer of nutrients by breaking down organic matter, thus supporting the productivity of the entire ecosystem\cite{keller2006}. The population growth rate of bacteria also plays an important role in medicine and public health, and the rapid reproduction of bacteria can lead to the rapid spread of diseases. The growth of bacterial resistance is also closely related to the dynamics of bacterial populations\cite{rivera-tapia2003}. Understanding and predicting the growth patterns of bacterial populations is critical to developing effective disease control strategies.
 
-Predictive microbiology was proposed by Roberts and Jarvis \cite{ross2003}, The goal of predictive microbiology, is to develop a mathematic equation which describes the behavior of microbes \cite{md2011 }. Central to this endeavor is the employment of models to interpret the growth patterns of microbial populations, particularly bacteria. The concept, these models range from mechanistic theories, grounded in the principles of population dynamics and resource availability, to phenomenological approaches that empirically describe observed growth patterns without delving into underlying biological mechanisms. 
+Predictive microbiology was proposed by Roberts and Jarvis
+\cite{ross2003}, The goal of predictive microbiology, is to develop a mathematic equation which describes the behavior of microbes \cite{md2011}. Central to this endeavor is the employment of models to interpret the growth patterns of microbial populations, particularly bacteria. The concept, these models range from mechanistic theories, grounded in the principles of population dynamics and resource availability, to phenomenological approaches that empirically describe observed growth patterns without delving into underlying biological mechanisms. 
 
 
 At the heart of population growth models is the Malthusian principle\cite{mcatee1936}, which posits that populations expand exponentially in the absence of resource limitations. However, real-world scenarios often deviate from this simplicity. As resources become scarce, growth rates decelerate, eventually stabilizing as populations reach the carrying capacity of their environment. This complex interplay of growth, resource utilization, and environmental constraints is conspicuously evident in bacterial populations. Bacteria, with their rapid growth rates and sensitivity to environmental changes, serve as ideal subjects for studying population dynamics.
@@ -55,7 +56,6 @@ In this context, my study aims to critically analyze and compare different mathe
 R is a programming language designed for statistical analysis and graphical representation, with toolkits such as minpack.lm for ease of use.
 R provides powerful graphics and visualization tools, such as the ggplot2 package, that help me present complex data and analysis results in a more intuitive way. 
 At the same time, such as dplyr, reader and other toolkits are convenient for processing datareadr: Used to load data. 
-The read_csv function efficiently reads data from a CSV file.
 dplyr: Data processing and cleaning. I used functions to process the data, such as creating unique ids, deleting NA values and negative values.
 minpack.lm: Contains the nlsLM function, which is a more robust nonlinear least squares fitting function for fitting logistic and Gompertz models.
 broom: Used to organize the output of model fitting. The glance function extracts the overall statistics of the model, such as R-squared, AIC, and BIC.
@@ -110,7 +110,7 @@ Using different models can provide different perspectives on bacterial growth dy
 
 \subsection{Modelling fitting}
 Model selection is considered as one the most reliable way to find the best fitted model. 
-Three statistical methods are often used：(i) maximizing fit; (ii) null hypothesis tests; and (iii) model selection criteria\cite{johnson2004}.  Finding the model that maximizes a fit measure, like adjusted R2. 
+Three statistical methods are often used, 1. maximizing fit; 2. null hypothesis tests; 3. model selection criteria\cite{johnson2004}.  Finding the model that maximizes a fit measure, like adjusted R2. 
 When prioritising the best fit, it fails to consider the principle of parsimony and, as a result, may lead to inaccurate parameter estimations and forecasts, rendering it an inadequate method for model selection. On the other hand, tests or criteria that consider both suitability and complexity are more appropriate for choosing a model.
 The likelihood ratio test (LRT) is the most employed method for testing null hypotheses. Nevertheless, it is not possible to utilise any type of likelihood ratio test (LRT) to measure the comparative level of support between competing models.
 Model selection criteria evaluate the goodness of fit and complexity of different models, such as AIC, BIC allowing for the comparison of numerous models at the same time. 
@@ -184,7 +184,7 @@ From the BIC table 3, the result is quite similar to  table 2. Gompertz model is
     \centering
     \includegraphics[width=0.5\linewidth]{../results/subset_ 14 _plot.png}
     \caption{the plot of subset data 14}
-    \label{fig:enter-label}
+    \label{fig:subset1-plot14}
 \end{figure}
 
 From table 2 and 3, the non-linear model fits better than linear model.Biological processes, especially those like bacterial growth, often exhibit nonlinear characteristics. For example, bacterial growth tends to be slow at first, then rapidly increases, and finally slows down as resources are depleted, eventually reaching a stable state. Nonlinear models often provide parameters that are more directly related to biological processes\cite{zwietering1990} (such as growth rate, carrying capacity, etc.) that have clear biological significance.The parameters of a linear model may be difficult to relate directly to specific biological features.
@@ -194,7 +194,7 @@ Some of the subset data didn't contain "time-lag" phases(shown in figure.2) in t
         \centering
         \includegraphics[width=0.5\linewidth]{../results/subset_ 7 _plot.png}
         \caption{the plot of subset data 7 }
-        \label{fig:enter-label}
+        \label{fig:subset1-plot7}
     \end{figure}
 
 Linear models, due to their simplicity, may have a strong ability to describe data with simple trends. Some of the subset data may only includes "exponential phases"(shown in figure 3). Quadratic model becomes the best model fitting the data. In figure 4, the population size drops instead of keeping steady. this might because, the bacteria enter "mortality phase". Both logistic and Gompertz model could not fit the data well. Cubic model becomes the best model in this subset.
@@ -202,14 +202,14 @@ Linear models, due to their simplicity, may have a strong ability to describe da
     \centering
     \includegraphics[width=0.5\linewidth]{../results/subset_ 116 _plot.png}
     \caption{the plot of subset data 116}
-    \label{fig:enter-label}
+    \label{fig:subset1-plot116}
 \end{figure}
 
 \begin{figure}
   \centering
     \includegraphics[width=0.5\linewidth]{../results/subset_ 1 _plot.png}
     \caption{the plot of subset data 1 }
-    \label{fig:enter-label}
+    \label{fig:subset1-plot1}
 \end{figure}
 
 From the result, Gompertz might be the best model fitting bacterial population growth.In the real world, it takes time for microbes to grow. Therefore, a time lag before exponential growth is needed. Gompertz model contains t-lag as the parameter, which means it might be more accurate and complete than logistic model. 
@@ -241,7 +241,7 @@ Due to the log scale, the discrepancy between fitted value and true value may al
 No models include "mortality phase" of  population growth. all the phases in the growth process may be significant to be studied. it contributes to controlling bacterial growth by knowing the complete process of population growth. more parameters is required to explain the mortality phases in model.
 
 \subsection{summary}
-The primary objective of our study was to analyze the growth dynamics of various bacterial populations by applying logistic and Gompertz models. Utilizing Akaike Information Criterion (AIC) ， Bayesian Information Criterion (BIC) and R squared as measure of fit to assess the relative merits of the models, we observed that the Gompertz model generally provided a better fit, although in some cases the logistic model was more appropriate. In addition, non-linear model fits population growth better than linear model. Their performance might be significantly influenced by the data, parameters, and other ecological factors. 
+The primary objective of our study was to analyze the growth dynamics of various bacterial populations by applying logistic and Gompertz models. Utilizing Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC) and R squared as measure of fit to assess the relative merits of the models, we observed that the Gompertz model generally provided a better fit, although in some cases the logistic model was more appropriate. In addition, non-linear model fits population growth better than linear model. Their performance might be significantly influenced by the data, parameters, and other ecological factors. 
 
 \newpage  
 \bibliographystyle{apacite}
