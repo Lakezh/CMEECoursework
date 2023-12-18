@@ -23,4 +23,4 @@ data:
 Includes two figure, which is the output of TAutoCorr.R. Other data are from previous parcticals.
 
 results:
-All the output results should be out here.
+All the output results should be put here.
