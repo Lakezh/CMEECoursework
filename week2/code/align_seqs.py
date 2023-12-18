@@ -4,10 +4,6 @@ import sys
 import csv
 
 Input_filename = '../data/sequences.csv'
-Output_filename = '../results/Output_file.csv'
-#rename the arguments
-
-
 with open(Input_filename, 'r') as file:
     lines = file.readlines()
     seq1 = lines[0].strip()
@@ -63,7 +59,7 @@ print(my_best_align)
 print(s1)
 print("Best score:", my_best_score)
 
-with open(Output_filename, 'w') as output:
+with open('../results/Output_file.csv', 'w') as output:
     output.write("Best Alignment:\n" + my_best_align + "\n")
     output.write("Best Score: " + str(my_best_score))
 #write output data file
