@@ -17,7 +17,7 @@ This Bash script is designed to automate the execution of both R and Python scri
 8. TAutoCorr.R
 This R script is designed to analyze the autocorrelation of annual mean temperatures at a specific location, determining whether the temperature in one year is significantly related to the temperature in the following year
 9. TAutoCorr.tex
-This LaTeX document presents the results of the temperature autocorrelation analysis performed by the TAutoCorr.R script
+This file can only be run after the results are produced, since the file needs the result figure from TAutoCorr.R. This LaTeX document presents the results of the temperature autocorrelation analysis performed by the TAutoCorr.R script
 
 data:
 Includes two figure, which is the output of TAutoCorr.R. Other data are from previous parcticals.
