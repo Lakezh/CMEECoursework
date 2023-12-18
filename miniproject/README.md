@@ -22,6 +22,7 @@ R Packages
 
 LaTeX for Documentation
     Purpose: LaTeX is used for preparing the research document, ensuring a professional layout and structure.
+Get the results first, and then run this Latex file. Since this file needs the output figures. Due to technique problem, pease press enter in the codes when there is lines dislocation.
 
 Running the Analysis
     Execute the R scripts to perform data processing, analysis, and model fitting.
