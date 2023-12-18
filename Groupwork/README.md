@@ -15,7 +15,7 @@ This R script is developed for analyzing predator-prey body mass distributions, 
 7. run_get_TreeHeight.sh
 This Bash script is designed to automate the execution of both R and Python scripts (get_TreeHeight.R and get_TreeHeight.py) that calculate tree heights.
 8. TAutoCorr.R
-This R script is designed to analyze the autocorrelation of annual mean temperatures at a specific location, determining whether the temperature in one year is significantly related to the temperature in the following year
+ggthemes package needs to be installed.This R script is designed to analyze the autocorrelation of annual mean temperatures at a specific location, determining whether the temperature in one year is significantly related to the temperature in the following year
 9. TAutoCorr.tex
 This file can only be run after the results are produced, since the file needs the result figure from TAutoCorr.R. This LaTeX document presents the results of the temperature autocorrelation analysis performed by the TAutoCorr.R script
 
