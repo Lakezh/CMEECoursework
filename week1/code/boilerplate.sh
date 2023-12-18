@@ -1,11 +1,10 @@
 #!/bin/sh
-#Author:Your Name your.login@imperial.ac.uk
+#Author:zh1323@ic.ac.uk
 #Script:boilerplate.sh
 #Desc:simple boilerplate for shell scrpts
 #Arguments:none 
-#Date: Oct 2019
+#Date: Oct 2023
 
 echo -e "\nThis is a shell script! \n"
 
 #exit
-bash myscript.sh
