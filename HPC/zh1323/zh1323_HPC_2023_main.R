@@ -175,7 +175,7 @@ neutral_time_series_speciation <- function(community,speciation_rate,duration)  
   }
   return(species_richness_series)
 }
-# Example usage
+# Test
 initial_community <- init_community_max(10)
 duration <- 20
 speciation_rate <- 0.1
@@ -520,21 +520,21 @@ multinomial <- function(pool, probs) {
 
 # Question 27
 survival_maturation <- function(state, growth_matrix) {
-  # 1. Initialize new_state with zeros
+  # Initialize new_state with zeros
   new_state <- rep(0, length(state))
   
-  # 2. Process each life stage
+  # Process each life stage
   for (i in 1:length(state)) {
     # a. Number of individuals in current stage
     num_individuals <- state[i]
     
-    # b. Probabilities for staying or moving to the next stage
+    # Probabilities for staying or moving to the next stage
     probs <- growth_matrix[i, ]
     
-    # c. Apply multinomial to get transitions
+    # Apply multinomial to get transitions
     transitions <- multinomial(num_individuals, probs)
     
-    # d. Add transitions to new_state
+    # Add transitions to new_state
     for (j in 1:length(transitions)) {
       if (j <= length(new_state)) {
         new_state[j] <- new_state[j] + transitions[j]
@@ -542,7 +542,6 @@ survival_maturation <- function(state, growth_matrix) {
     }
   }
   
-  # 3. Return the new_state
   return(new_state)
 }
 
@@ -681,7 +680,6 @@ stochastic_simulation <- function(initial_state, growth_matrix, reproduction_mat
 
 # Question 33
 question_33 <- function() {
-  # Parameters from Question 25
   growth_matrix <- matrix(c(0.1, 0.0, 0.0, 0.0, 
                             0.5, 0.4, 0.0, 0.0, 
                             0.0, 0.4, 0.7, 0.0, 
