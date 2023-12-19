@@ -347,7 +347,7 @@ calculate_cluster_means <- function() {
   sum_5000 <- c()
   
   for(index in 1:100){
-    load(file = paste0("Test_result", index, ".rda"))
+    load(file = paste0("neu_sim_results_", index, ".rda", sep=""))
     
     if(index <= 25){cluster_size = 500} else if
     (index <= 50){cluster_size = 1000} else if
