@@ -38,7 +38,7 @@ reproduction_matrix <- matrix(c(0.0, 0.0, 0.0, 2.6,
                                 0.0, 0.0, 0.0, 0.0), nrow=4, ncol=4, byrow=T)
 clutch_distribution <- c(0.06,0.08,0.13,0.15,0.16,0.18,0.15,0.06,0.03)
 
-output_file_name <- paste("stochastic_", iter, ".rda", sep="")
+output_file_name <- paste("neu_sim_results_", iter, ".rda", sep="")
 
 # Initialise a list which will contain the results of your 150 simulations
 simu_results <- list()
