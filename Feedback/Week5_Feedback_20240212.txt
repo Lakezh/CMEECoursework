@@ -1,0 +1,70 @@
+Starting code feedback for Zhongbin, Week5
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 8.05 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: HPC, .git, week1, Groupwork, week2, miniproject, Feedback, week3
+
+Found the following files in parent directory: .gitignore, README.md
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+
+**********************************************************************
+*~
+*.tmp
+week1/sandbox
+
+
+
+**********************************************************************
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+
+**********************************************************************
+MY CMEE Coursework Repository
+CMEECoursework repository contains the in-class work and coursework in each weeks. 
+There are three directories whcih are week 1 to 3, each contains code, data, results and sandbox.
+Code directory is for saving all the code and scripts.
+Data directory is for saving all the data used in scripts.
+Results directory is for saving all the ouput results of scripts.
+Sandbox directory is for experiment and testing codes. 
+I put sandbox directoies into gitignore since nothing important in these directories.
+
+
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 3 weekly directories: week1, week2, week3
+
+The Week5 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 100
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
